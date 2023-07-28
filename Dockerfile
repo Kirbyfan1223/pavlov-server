@@ -4,6 +4,7 @@ FROM ubuntu:22.04
 ENV PORT 7777
 
 # Install prerequisites
+RUN apt update && apt upgrade -y && apt install -y gdb curl lib32gcc-s1 libc++-dev unzip cron nano
 RUN apt update -y &&   apt install -y gdb curl lib32gcc1 libc++-dev libc++1 sudo &&   rm -rf /var/lib/apt/lists/*
 
 # Create steam user
